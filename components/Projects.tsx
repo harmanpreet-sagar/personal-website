@@ -14,7 +14,7 @@ const projects: Project[] = [
     subtitle: 'Investor-Business Matching Platform',
     description: 'Built a scalable platform with secure Firebase auth and an efficient matching algorithm that reduced investor-business match time by 90%.',
     award: '🏆 1st Place — DeltaHacks IX',
-    tech: ['Python', 'JavaScript', 'SQL', 'Firebase'],
+    tech: ['Python', 'JavaScript', 'SQL', 'Firebase', 'HTML', 'CSS', 'Figma'],
     emoji: '💼'
   },
   {
@@ -25,7 +25,7 @@ const projects: Project[] = [
       { value: '40%', label: 'less latency' },
       { value: '20-30cm', label: 'detection range' }
     ],
-    tech: ['C++', 'Arduino', 'Embedded'],
+    tech: ['C++', 'Arduino', 'Ultrasonic Sensing', 'PWM Motor Control','Embedded Circuit Design'],
     emoji: '🤖'
   }
 ]
