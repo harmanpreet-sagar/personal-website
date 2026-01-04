@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Website
+
+A modern portfolio website built with Next.js, TypeScript, and React.
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+personal-website/
+├── app/
+│   ├── layout.tsx      # Root layout with fonts and metadata
+│   ├── page.tsx        # Main page component
+│   └── globals.css     # Global styles
+├── components/
+│   ├── BackgroundElements.tsx  # Animated background elements
+│   ├── Navigation.tsx          # Navigation bar with scroll effects
+│   ├── Hero.tsx                # Hero section
+│   ├── StatsBar.tsx            # Statistics bar
+│   ├── About.tsx               # About section
+│   ├── Experience.tsx          # Experience timeline
+│   ├── Projects.tsx            # Projects grid
+│   └── Footer.tsx               # Footer section
+├── package.json
+├── tsconfig.json
+└── next.config.js
+```
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- **TypeScript**: Full type safety
+- **Next.js 14**: App Router with React Server Components
+- **Responsive Design**: Mobile-first approach
+- **Smooth Animations**: Scroll-based animations and transitions
+- **Modern UI**: Clean, professional design with animated background elements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To customize the content:
 
-## Deploy on Vercel
+1. **Personal Information**: Edit the components in the `components/` directory
+2. **Skills**: Update the `skills` array in `components/About.tsx`
+3. **Experience**: Update the `experiences` array in `components/Experience.tsx`
+4. **Projects**: Update the `projects` array in `components/Projects.tsx`
+5. **Profile Image**: Replace the "HS" placeholder in `components/Hero.tsx` with an actual image
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Build for Production
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm start
+```
+
+## Deploy
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new).
