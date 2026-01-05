@@ -10,7 +10,7 @@ export default function Footer() {
           Get in Touch
         </a>
         <p className="footer-copyright">
-          © 2025 Harmanpreet Singh Sagar
+          © 2026 Harmanpreet Singh Sagar
         </p>
       </div>
     </footer>

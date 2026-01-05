@@ -27,8 +27,20 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${sourceSerif.variable} ${dmSans.variable}`}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const savedTheme = localStorage.getItem('theme') || 'light';
+                  document.documentElement.setAttribute('data-theme', savedTheme);
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         {children}
         <SpeedInsights />
         <Analytics />
