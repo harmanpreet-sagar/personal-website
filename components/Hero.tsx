@@ -22,13 +22,17 @@ export default function Hero() {
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.002 1.61L0 12.004 6.002 22.39h11.996L24 12.004 17.998 1.61H6.002zm1.593 4.084h3.947c3.605 0 6.276 1.695 6.276 6.31 0 4.436-3.21 6.302-6.456 6.302H7.595V5.694zm2.517 2.449v7.714h1.241c2.646 0 3.862-1.55 3.862-3.861.009-2.569-1.096-3.853-3.767-3.853h-1.336z"/></svg>
             Devpost
           </a>
+          <a href="https://drive.google.com/file/d/1-k9mH8vejDee-5TvPyU02qCTbsOTn0wZ/view?usp=sharing" className="hero-link" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h6v6h6v10H6zm2-6h8v2H8v-2zm0 4h8v2H8v-2zm0-8h3v2H8v-2z"/></svg>
+            Resume
+          </a>
         </div>
       </div>
       <div className="hero-image">
         <div className="profile-image-wrapper">
           <div className="profile-image">
             <Image
-              src="/images/harman_main_photo.jpg"
+              src="/images/harman_main_photo_cropped_1.jpeg"
               alt="Harmanpreet Singh Sagar"
               width={320}
               height={320}
