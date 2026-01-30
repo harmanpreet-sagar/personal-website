@@ -839,11 +839,14 @@ section {
 /* Projects */
 .projects-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
 .project-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   background: rgba(255,255,255,0.9);
   border: 1px solid rgba(26, 26, 26, 0.1);
   border-radius: 16px;
@@ -1088,6 +1091,10 @@ footer {
 
   .shape {
     display: none;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
