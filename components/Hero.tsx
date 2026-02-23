@@ -7,7 +7,7 @@ export default function Hero() {
         <p className="hero-greeting">Hello, I&apos;m</p>
         <h1>Harmanpreet Singh Sagar</h1>
         <p className="hero-tagline">
-          Software Engineering student at McMaster University, optimizing CI/CD pipelines and building embedded systems at Synopsys Inc.
+          Software Engineering student at McMaster University — firmware and embedded systems with the McMaster Interdisciplinary Satellite Team.
         </p>
         <div className="hero-links">
           <a href="https://github.com/harmanpreet-sagar" className="hero-link" target="_blank" rel="noopener noreferrer">
