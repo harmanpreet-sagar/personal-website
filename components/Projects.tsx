@@ -24,7 +24,7 @@ const projects: Project[] = [
     subtitle: 'Campus Water Fountain Tracker',
     description: 'DeltaHacks X submission — a web app helping students locate and rate water fountains across McMaster campus with real-time availability.',
     award: '🏆 DeltaHacks X',
-    tech: ['JavaScript', 'Node.js', 'Maps API'],
+    tech: ['HTML', 'CSS', 'JavaScript', 'SQL', 'Node.js', 'TensorFlow', 'Figma'],
     emoji: '💧',
     githubUrl: 'https://github.com/harmanpreet-sagar/MacWater'
   },
@@ -36,7 +36,7 @@ const projects: Project[] = [
       { label: 'XNA Framework' },
       { label: 'Xbox Controller' }
     ],
-    tech: ['C#', 'XNA', 'OOP'],
+    tech: ['C#', 'XNA Framework', 'OOP'],
     emoji: '🎮',
     githubUrl: 'https://github.com/harmanpreet-sagar/Humans-vs-Robots'
   },

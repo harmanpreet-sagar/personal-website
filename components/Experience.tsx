@@ -35,7 +35,7 @@ const experiences: ExperienceItem[] = [
     role: 'Community & Code Co-Lead',
     company: 'Google Developer Groups McMaster',
     date: 'Sept 2023 — Aug 2025',
-    description: 'Leading technical workshops and a 25+ member team through Agile sprints. Managing logistics and stakeholder communication across multiple programs.',
+    description: 'Led technical workshops and a 25+ member team through Agile sprints. Managed logistics and stakeholder communication across multiple programs.',
     metrics: [
       { value: '400+', label: 'students reached' },
       { value: '6+', label: 'programs managed' }

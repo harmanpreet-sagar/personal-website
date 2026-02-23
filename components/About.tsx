@@ -23,13 +23,16 @@ export default function About() {
             <div className="about-content">
                 <div className="about-text">
                     <p>
-                        I&apos;m a Software Engineering student at McMaster University (Class of 2027) passionate about building efficient systems and solving complex problems. Currently, I work as a System Architecture & Modelling Engineering Intern at Synopsys Inc., where I&apos;ve reduced CI/CD pipeline runtimes by 55% and improved depot stability by 90%.
+                        I&apos;m a Software Engineering student at McMaster University (Class of 2027) passionate about building efficient systems and solving complex problems. I currently develop firmware for satellite subsystems with the McMaster Interdisciplinary Satellite Team.
                     </p>
                     <p>
-                        Beyond my internship, I serve as Community & Code Co-Lead for Google Developer Groups McMaster, organizing workshops for 400+ students. I also develop firmware for satellite subsystems with the McMaster Interdisciplinary Satellite Team.
+                        I previously served as Community & Code Co-Lead for Google Developer Groups McMaster, organizing workshops for 400+ students.
                     </p>
                     <p>
-                        Previously, I worked as a Research Assistant at McMaster, contributing to the Drasil project by improving validation accuracy across 200k+ lines of code. I enjoy tackling challenges from embedded systems to high-speed SERDES verification.
+                        I previously worked as a System Architecture & Modelling Engineering Intern at Synopsys Inc., where I reduced CI/CD pipeline runtimes by 55% and improved depot stability by 90%. Before that, I was a Research Assistant at McMaster, contributing to the Drasil project by improving validation accuracy across 200k+ lines of code.
+                    </p>
+                    <p>
+                        I enjoy tackling challenges from embedded systems to high-speed SERDES verification and am always looking for new opportunities to build and learn.
                     </p>
                 </div>
                 <div>
