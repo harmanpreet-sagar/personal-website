@@ -2,14 +2,14 @@
   --bg: #FFFFFF;
   --text: #1A1A1A;
   --accent: #1E40AF;
-  --pop: #F59E0B;
+  --pop: #0D9488;
 }
 
 [data-theme="dark"] {
   --bg: #0F0F0F;
   --text: #F5F5F5;
   --accent: #60A5FA;
-  --pop: #FBBF24;
+  --pop: #2DD4BF;
 }
 
 [data-theme="dark"] body {
@@ -61,7 +61,7 @@
 }
 
 [data-theme="dark"] .metric {
-  background: rgba(251, 191, 36, 0.15);
+  background: rgba(45, 212, 191, 0.15);
 }
 
 [data-theme="dark"] .project-card {
@@ -75,11 +75,11 @@
 }
 
 [data-theme="dark"] .project-highlight {
-  background: rgba(251, 191, 36, 0.15);
+  background: rgba(45, 212, 191, 0.15);
 }
 
 [data-theme="dark"] .project-award {
-  background: rgba(251, 191, 36, 0.15);
+  background: rgba(45, 212, 191, 0.15);
 }
 
 [data-theme="dark"] .project-tech span {
@@ -820,7 +820,7 @@ section {
   align-items: baseline;
   gap: 0.4rem;
   padding: 0.5rem 1rem;
-  background: rgba(245, 158, 11, 0.1);
+  background: rgba(13, 148, 136, 0.12);
   border-radius: 8px;
   font-size: 0.85rem;
 }
@@ -916,7 +916,7 @@ section {
   align-items: baseline;
   gap: 0.3rem;
   padding: 0.35rem 0.7rem;
-  background: rgba(245, 158, 11, 0.1);
+  background: rgba(13, 148, 136, 0.12);
   border-radius: 6px;
   font-size: 0.75rem;
 }
@@ -936,7 +936,7 @@ section {
   align-items: center;
   gap: 0.4rem;
   padding: 0.4rem 0.8rem;
-  background: rgba(245, 158, 11, 0.12);
+  background: rgba(13, 148, 136, 0.12);
   border-radius: 6px;
   font-size: 0.75rem;
   color: var(--pop);
