@@ -4,11 +4,13 @@ export default function About() {
     ]
     
     const libraries_and_frameworks = [
-        'MATLAB', 'Simulink', 'Restinio', 'Firebase', 'LibCSP', 'UVM', 'Matplotlib', 'NumPy', 'SciPy'
+        'MATLAB', 'Simulink', 'Restinio', 'Firebase', 'LibCSP', 'UVM', 'Matplotlib', 'NumPy', 'SciPy',
+        'React', 'FastAPI', 'Tailwind CSS', 'TypeScript', 'Pydantic', 'Pytest', 'Twilio'
     ]
 
     const tools = [
-        'Git', 'GitHub', 'Linux', 'CMake', 'vcpkg', 'Perforce', 'Jenkins', 'Atlassian API', 'REST APIs', 'Vitis', 'Arduino'
+        'Git', 'GitHub', 'Linux', 'CMake', 'vcpkg', 'Perforce', 'Jenkins', 'Atlassian API', 'REST APIs', 'Vitis', 'Arduino',
+        'Docker', 'PostgreSQL', 'Supabase', 'MQTT', 'Vercel', 'Render'
     ]
 
     const awards = [
@@ -23,16 +25,7 @@ export default function About() {
             <div className="about-content">
                 <div className="about-text">
                     <p>
-                        I&apos;m a Software Engineering student at McMaster University (Class of 2027) passionate about building efficient systems and solving complex problems. I currently develop firmware for satellite subsystems with the McMaster Interdisciplinary Satellite Team.
-                    </p>
-                    <p>
-                        I previously served as Community & Code Co-Lead for Google Developer Groups McMaster, organizing workshops for 400+ students.
-                    </p>
-                    <p>
-                        I previously worked as a System Architecture & Modelling Engineering Intern at Synopsys Inc., where I reduced CI/CD pipeline runtimes by 55% and improved depot stability by 90%. Before that, I was a Research Assistant at McMaster, contributing to the Drasil project by improving validation accuracy across 200k+ lines of code.
-                    </p>
-                    <p>
-                        I enjoy tackling challenges from embedded systems to high-speed SERDES verification and am always looking for new opportunities to build and learn.
+                        Software Engineering student at McMaster University (Class of 2027) who has verified SERDES designs in C++, written firmware for satellite subsystems in Embedded C, and led the architecture and development of a full-stack IoT platform. I like working on problems where the software and the system are equally important.
                     </p>
                 </div>
                 <div>
@@ -77,4 +70,3 @@ export default function About() {
         </section>
     )
 }
-

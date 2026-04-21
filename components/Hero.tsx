@@ -7,7 +7,7 @@ export default function Hero() {
         <p className="hero-greeting">Hello, I&apos;m</p>
         <h1>Harmanpreet Singh Sagar</h1>
         <p className="hero-tagline">
-          Software Engineering student at McMaster University — firmware and embedded systems with the McMaster Interdisciplinary Satellite Team.
+          Software Engineering student at McMaster with a habit of working closest to wherever the interesting problem is, whether that is firmware, backend systems, or anywhere in between.
         </p>
         <div className="hero-links">
           <a href="https://github.com/harmanpreet-sagar" className="hero-link" target="_blank" rel="noopener noreferrer">
@@ -32,7 +32,7 @@ export default function Hero() {
         <div className="profile-image-wrapper">
           <div className="profile-image">
             <Image
-              src="/images/harman_main_photo_cropped_1.jpeg"
+              src="/images/harman_main_light_up_the_night.jpg"
               alt="Harmanpreet Singh Sagar"
               width={320}
               height={320}
@@ -45,4 +45,3 @@ export default function Hero() {
     </section>
   )
 }
-
