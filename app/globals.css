@@ -87,6 +87,21 @@
   opacity: 0.5;
 }
 
+[data-theme="dark"] .project-links {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .project-link-github {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text);
+}
+
+[data-theme="dark"] .project-link-github:hover {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
 [data-theme="dark"] footer {
   background: rgba(25, 25, 25, 0.9);
 }
@@ -844,9 +859,8 @@ section {
 }
 
 .project-card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
+  display: flex;
+  flex-direction: column;
   background: rgba(255,255,255,0.9);
   border: 1px solid rgba(26, 26, 26, 0.1);
   border-radius: 16px;
@@ -882,6 +896,7 @@ section {
 
 .project-content {
   padding: 1.5rem;
+  flex: 1;
 }
 
 .project-title {
@@ -956,6 +971,56 @@ section {
   font-size: 0.7rem;
   color: var(--text);
   opacity: 0.5;
+}
+
+/* Project link buttons */
+.project-links {
+  display: flex;
+  gap: 0.6rem;
+  padding: 1rem 1.5rem 1.5rem;
+  border-top: 1px solid rgba(26, 26, 26, 0.08);
+}
+
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.project-link-btn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.project-link-github {
+  border: 1px solid rgba(26, 26, 26, 0.2);
+  color: var(--text);
+  background: transparent;
+}
+
+.project-link-github:hover {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+  opacity: 1;
+}
+
+.project-link-demo {
+  background: var(--accent);
+  color: #ffffff;
+  border: 1px solid transparent;
+}
+
+.project-link-demo:hover {
+  opacity: 0.85;
 }
 
 /* Hamburger and Mobile Menu - Hidden on Desktop */
@@ -1225,4 +1290,3 @@ footer {
     height: 44px;
   }
 }
-
