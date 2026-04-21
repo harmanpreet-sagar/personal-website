@@ -1023,6 +1023,16 @@ section {
   opacity: 0.85;
 }
 
+.project-link-devpost {
+  background: #003E54;
+  color: #ffffff;
+  border: 1px solid transparent;
+}
+
+.project-link-devpost:hover {
+  opacity: 0.85;
+}
+
 /* Hamburger and Mobile Menu - Hidden on Desktop */
 .hamburger {
   display: none;
