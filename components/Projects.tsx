@@ -21,7 +21,7 @@ interface Project {
         { label: '🐳 Docker Compose' },
         { label: '👥 Team Lead' }
       ],
-      tech: ['Python', 'FastAPI', 'React', 'TypeScript', 'PostgreSQL', 'Supabase', 'MQTT', 'Docker', 'JWT', 'Tailwind CSS'],
+      tech: ['Python', 'FastAPI', 'React', 'TypeScript', 'PostgreSQL', 'Supabase', 'MQTT', 'Docker', 'JWT', 'Twilio', 'Tailwind CSS'],
       emoji: '🌿',
       githubUrl: 'https://github.com/harmanpreet-sagar/sfwreng-3a04-group6-t01-scemas',
       demoUrl: 'https://sfwreng-3a04-group6-t01-scemas.vercel.app'
