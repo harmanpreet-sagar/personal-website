@@ -32,7 +32,7 @@ export default function Hero() {
         <div className="profile-image-wrapper">
           <div className="profile-image">
             <Image
-              src="/images/harman_main_photo_cropped_1.jpeg"
+              src="/images/harman_main_light_up_the_night.jpg"
               alt="Harmanpreet Singh Sagar"
               width={320}
               height={320}
