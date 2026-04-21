@@ -4,11 +4,13 @@ export default function About() {
     ]
     
     const libraries_and_frameworks = [
-        'MATLAB', 'Simulink', 'Restinio', 'Firebase', 'LibCSP', 'UVM', 'Matplotlib', 'NumPy', 'SciPy'
+        'MATLAB', 'Simulink', 'Restinio', 'Firebase', 'LibCSP', 'UVM', 'Matplotlib', 'NumPy', 'SciPy',
+        'React', 'FastAPI', 'Tailwind CSS', 'TypeScript', 'Pydantic', 'Pytest', 'Twilio'
     ]
 
     const tools = [
-        'Git', 'GitHub', 'Linux', 'CMake', 'vcpkg', 'Perforce', 'Jenkins', 'Atlassian API', 'REST APIs', 'Vitis', 'Arduino'
+        'Git', 'GitHub', 'Linux', 'CMake', 'vcpkg', 'Perforce', 'Jenkins', 'Atlassian API', 'REST APIs', 'Vitis', 'Arduino',
+        'Docker', 'PostgreSQL', 'Supabase', 'MQTT', 'Vercel', 'Render'
     ]
 
     const awards = [
@@ -77,4 +79,3 @@ export default function About() {
         </section>
     )
 }
-
