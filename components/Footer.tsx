@@ -6,7 +6,7 @@ export default function Footer() {
         <p className="footer-text">
           I&apos;m always open to discussing new opportunities or interesting projects.
         </p>
-        <a href="mailto:sagarh@mcmaster.ca" className="footer-email">
+        <a href="mailto:harmanpreetssagar@gmail.com" className="footer-email">
           Get in Touch
         </a>
         <p className="footer-copyright">

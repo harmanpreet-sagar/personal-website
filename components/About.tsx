@@ -1,22 +1,25 @@
 export default function About() {
     const languages = [
-        'Python', 'C++', 'Java', 'C', 'Embedded C', 'C#', 'SQL', 'Haskell', 'HTML', 'CSS', 'Bash', 'SystemVerilog'
+        'Python', 'TypeScript', 'JavaScript', 'C++', 'Java', 'C', 'Embedded C', 'C#', 'SQL', 'Haskell',
+        'HTML', 'CSS', 'Bash', 'SystemVerilog'
     ]
     
     const libraries_and_frameworks = [
-        'MATLAB', 'Simulink', 'Restinio', 'Firebase', 'LibCSP', 'UVM', 'Matplotlib', 'NumPy', 'SciPy',
-        'React', 'FastAPI', 'Tailwind CSS', 'TypeScript', 'Pydantic', 'Pytest', 'Twilio'
+        'React', 'Next.js', 'FastAPI', 'Node.js', 'Tailwind CSS', 'SWR', 'FreeRTOS', 'LibCSP',
+        'Pydantic', 'Restinio', 'Firebase', 'JUnit', 'Pytest', 'UVM', 'PyGame', 'XNA Framework', 'Twilio'
     ]
 
     const tools = [
-        'Git', 'GitHub', 'Linux', 'CMake', 'vcpkg', 'Perforce', 'Jenkins', 'Atlassian API', 'REST APIs', 'Vitis', 'Arduino',
-        'Docker', 'PostgreSQL', 'Supabase', 'MQTT', 'Vercel', 'Render'
+        'Git', 'GitHub', 'GitHub Actions', 'Linux', 'Docker', 'PostgreSQL', 'Supabase', 'MQTT', 'CAN',
+        'CMake', 'Maven', 'vcpkg', 'Perforce', 'Jenkins', 'MATLAB', 'Simulink', 'Vitis', 'Arduino',
+        'Atlassian API', 'REST APIs', 'Visual Studio', 'Webflow', 'Figma', 'Notion', 'Vercel', 'Render'
     ]
 
     const awards = [
-        { name: "Dean's Honour List", value: "2022-24" },
+        { name: "Dean's Honour List", value: '3x' },
         { name: 'Lawrence Tse Research Award', value: '$6,000' },
-        { name: 'A.G. Reilly Scholarship', value: '$5,000' }
+        { name: 'A.G. Reilly Scholarship', value: '$5,000' },
+        { name: 'McMaster University Award of Excellence', value: '2022' }
     ]
 
     return (
