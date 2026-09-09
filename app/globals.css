@@ -1300,3 +1300,80 @@ footer {
     height: 44px;
   }
 }
+
+/* Preloader
+   Hidden unless <html> carries pl-active, which the inline script in layout.tsx
+   adds immediately and removes again as soon as the page finishes loading. The
+   fade-in carries a 320ms delay, so a load that finishes before then removes the
+   class first and the visitor never sees anything. Only a genuinely slow load
+   reaches the delay and fades it in. */
+.preloader {
+  display: none;
+}
+
+html.pl-active .preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  background: var(--bg);
+  animation: pl-in 260ms ease 320ms both;
+}
+
+html.pl-out .preloader {
+  animation: pl-out 300ms ease both;
+}
+
+.preloader-mark {
+  font-family: var(--font-source-serif), serif;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--text);
+}
+
+.preloader-track {
+  position: relative;
+  width: 120px;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(128, 128, 128, 0.2);
+  overflow: hidden;
+}
+
+.preloader-track::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  border-radius: 2px;
+  background: var(--pop);
+  animation: pl-sweep 1.1s ease-in-out infinite;
+}
+
+@keyframes pl-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pl-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes pl-sweep {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(250%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.pl-active .preloader { animation: pl-in 1ms linear 320ms both; }
+  html.pl-out .preloader { animation: pl-out 1ms linear both; }
+  .preloader-track::after { animation: none; width: 100%; opacity: 0.5; }
+}
