@@ -42,3 +42,6 @@ portfolio.html
 master_content_bank.md
 fixes.md
 *resume*.pdf
+
+# but the resume served by the site is part of the site
+!public/*.pdf
