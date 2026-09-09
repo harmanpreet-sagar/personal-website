@@ -37,3 +37,8 @@ next-env.d.ts
 # portfolio
 portfolio.html
 
+
+# local working notes and source documents, not for a public repo
+master_content_bank.md
+fixes.md
+*resume*.pdf
