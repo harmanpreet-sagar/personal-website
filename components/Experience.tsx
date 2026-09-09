@@ -12,16 +12,11 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    role: 'System Architecture & Modelling Intern',
-    company: 'Synopsys Inc.',
-    date: 'May 2024 — Aug 2025',
-    description: 'Designed a two-tier MATLAB/Simulink regression system, a pre-commit gate backed by a 3-hour nightly deep regression, then parallelized that gate’s Jenkins stages to cut its runtime. Verified high-speed SERDES designs in C++ to full code and functional coverage, and built an HTTP-based trace-observer tool with Restinio.',
-    metrics: [
-      { value: '90%', label: 'fewer broken builds in the depot' },
-      { value: '55%', label: 'gate runtime (40 to 18 mins)' },
-      { value: '45%', label: 'MLSD model execution speed' },
-      { value: '50%', label: 'less SERDES debug time' }
-    ]
+    role: 'Incoming Research Assistant, jPipe',
+    company: 'McMaster University, McSCert',
+    date: 'Sept 2026',
+    description: 'Selected to contribute to jPipe, a Java and ANTLR4 DSL compiler for justification diagrams used in safety-critical software certification.',
+    metrics: []
   },
   {
     role: 'Firmware Specialist, PRESET CubeSat',
@@ -47,20 +42,15 @@ const experiences: ExperienceItem[] = [
     ]
   },
   {
-    role: 'Incoming Research Assistant, jPipe',
-    company: 'McMaster University, McSCert',
-    date: 'Sept 2026',
-    description: 'Selected to contribute to jPipe, a Java and ANTLR4 DSL compiler for justification diagrams used in safety-critical software certification.',
-    metrics: []
-  },
-  {
-    role: 'Research Assistant, Drasil',
-    company: 'McMaster University, Dept. of Computing and Software',
-    date: 'May 2023 — Aug 2023',
-    description: 'Improved Drasil\'s validation accuracy and code-generation reliability using Haskell. Generated reproducible outputs across multiple case studies.',
+    role: 'System Architecture & Modelling Intern',
+    company: 'Synopsys Inc.',
+    date: 'May 2024 — Aug 2025',
+    description: 'Designed a two-tier MATLAB/Simulink regression system, a pre-commit gate backed by a 3-hour nightly deep regression, then parallelized that gate’s Jenkins stages to cut its runtime. Verified high-speed SERDES designs in C++ to full code and functional coverage, and built an HTTP-based trace-observer tool with Restinio.',
     metrics: [
-      { value: '200K+', label: 'lines updated' },
-      { value: '25%', label: 'duplication reduced' }
+      { value: '90%', label: 'fewer broken builds in the depot' },
+      { value: '55%', label: 'gate runtime (40 to 18 mins)' },
+      { value: '45%', label: 'MLSD model execution speed' },
+      { value: '50%', label: 'less SERDES debug time' }
     ]
   },
   {
@@ -71,6 +61,16 @@ const experiences: ExperienceItem[] = [
     metrics: [
       { value: '400+', label: 'students reached' },
       { value: '6+', label: 'programs managed' }
+    ]
+  },
+  {
+    role: 'Research Assistant, Drasil',
+    company: 'McMaster University, Dept. of Computing and Software',
+    date: 'May 2023 — Aug 2023',
+    description: 'Improved Drasil\'s validation accuracy and code-generation reliability using Haskell. Generated reproducible outputs across multiple case studies.',
+    metrics: [
+      { value: '200K+', label: 'lines updated' },
+      { value: '25%', label: 'duplication reduced' }
     ]
   }
 ]
