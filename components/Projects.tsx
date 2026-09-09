@@ -13,13 +13,26 @@ interface Project {
   
   const projects: Project[] = [
     {
+      title: 'F1 Battle Detector',
+      subtitle: 'Real-Time Race Analytics',
+      description: 'Real-time Formula 1 battle detection fusing 3 live OpenF1 data streams across 20 drivers on a 1.5s async polling loop. Composite scoring model ranks battles by weighted gap, closing rate, and pace delta, with a stability filter requiring a battle to persist across 3 consecutive polls before it surfaces. Cut the container image 82% (1.19GB to 210MB) with a multi-stage Docker build.',
+      highlights: [
+        { value: '82%', label: 'smaller image' },
+        { value: '62', label: 'tests in CI' },
+        { value: '1.5s', label: 'polling loop' }
+      ],
+      tech: ['Python', 'FastAPI', 'asyncio', 'Pydantic', 'Next.js', 'TypeScript', 'SWR', 'Docker', 'GitHub Actions'],
+      emoji: '🏎️',
+      githubUrl: 'https://github.com/harmanpreet-sagar/F1-Battle-Detector-Summarizer'
+    },
+    {
       title: 'SCEMAS',
       subtitle: 'Smart City Environmental Monitoring & Alert System',
-      description: 'Full-stack IoT monitoring platform with real-time MQTT ingestion, configurable alert thresholds, and SSE-streamed live alerts to a React dashboard — built as team lead across 5 subsystems including Threshold Management, Aggregation, Alerts, and the API Facade.',
+      description: 'Full-stack IoT monitoring platform with real-time MQTT ingestion, configurable alert thresholds, and SSE-streamed live alerts to a React dashboard. Team lead on a 5-person build spanning 5 subsystems, personally owning Threshold Management and the API Facade while debugging and integrating across the rest.',
       highlights: [
         { label: '⚡ Real-time SSE Alerts' },
         { label: '🐳 Docker Compose' },
-        { label: '👥 Team Lead' }
+        { label: '👥 Team Lead, 5-Person Team' }
       ],
       tech: ['Python', 'FastAPI', 'React', 'TypeScript', 'PostgreSQL', 'Supabase', 'MQTT', 'Docker', 'JWT', 'Twilio', 'Tailwind CSS'],
       emoji: '🌿',
@@ -29,7 +42,7 @@ interface Project {
     {
       title: 'RBC-BizConnect',
       subtitle: 'Investor-Business Matching Platform',
-      description: 'Built a scalable platform with secure Firebase auth and an efficient matching algorithm that reduced investor-business match time by 90%.',
+      description: 'Built a scalable platform with secure Firebase authentication and a SQLite-backed data layer. Cut investor-business matching from quadratic to linear time with a single-pass algorithm, letting the platform scale to large datasets.',
       award: '🏆 1st Place — DeltaHacks IX',
       tech: ['Python', 'JavaScript', 'SQL', 'Firebase', 'HTML', 'CSS', 'Figma'],
       emoji: '💼',
@@ -38,10 +51,10 @@ interface Project {
     },
     {
       title: 'MacWater',
-      subtitle: 'Campus Water Fountain Tracker',
-      description: 'DeltaHacks X submission — a web app helping students locate and rate water fountains across McMaster campus with real-time availability.',
-      award: '🏆 DeltaHacks X',
-      tech: ['HTML', 'CSS', 'JavaScript', 'SQL', 'Node.js', 'TensorFlow', 'Figma'],
+      subtitle: 'Campus Water Filter Status Tracker',
+      description: 'DeltaHacks X submission built with a 4-person team: a web app giving McMaster students real-time status of campus water filtration systems, showing which filters are working and which need replacement. Owned the backend and database in Node.js and SQL, serving status driven by the team’s image classifier.',
+      award: '🎯 DeltaHacks X Submission',
+      tech: ['HTML', 'CSS', 'JavaScript', 'SQL', 'Node.js', 'Figma'],
       emoji: '💧',
       githubUrl: 'https://github.com/harmanpreet-sagar/MacWater',
       devpostUrl: 'https://devpost.com/software/macwater'
@@ -49,10 +62,10 @@ interface Project {
     {
       title: 'Humans vs Robots',
       subtitle: 'Space Edition Game',
-      description: 'A shooter game where players defeat enemies while dodging bullets. Supports Xbox controller and keyboard input with clean UI/UX.',
+      description: 'Interactive combat game in C# with the XNA Framework, built on object-oriented design with a real-time game loop handling collision detection, projectile physics, and CPU opponent behaviour. Supports keyboard and Xbox 360 controller input.',
       highlights: [
         { label: 'XNA Framework' },
-        { label: 'Xbox Controller' }
+        { value: '20+', label: 'playtesters' }
       ],
       tech: ['C#', 'XNA Framework', 'OOP'],
       emoji: '🎮',
@@ -61,10 +74,10 @@ interface Project {
     {
       title: 'Robotic Car',
       subtitle: 'Autonomous Navigation System',
-      description: 'Led system design for autonomous navigation with ultrasonic sensing. Reduced motor control latency by 40% and wiring failures by 50%.',
+      description: 'Autonomous vehicle that detects obstacles with an ultrasonic sensor and halts to avoid collision. Built on Arduino with motor control circuitry, breadboard assembly, and a dual battery supply, documented with a circuit diagram, schematic, and full component list.',
       highlights: [
-        { value: '40%', label: 'less latency' },
-        { value: '20-30cm', label: 'detection' }
+        { label: 'Ultrasonic Sensing' },
+        { label: 'Arduino' }
       ],
       tech: ['C++', 'Arduino', 'Ultrasonic Sensing', 'PWM Motor Control', 'Embedded Circuit Design'],
       emoji: '🤖',
@@ -72,22 +85,22 @@ interface Project {
     },
     {
       title: 'Maze Runner',
-      subtitle: 'Pathfinding Algorithm Visualizer',
-      description: 'Implemented BFS and DFS algorithms to solve mazes with visual path tracing. Built with clean OOP architecture for software design course.',
+      subtitle: 'Maze Pathfinding Solver',
+      description: 'Java maze solver that parses ASCII maze files and computes valid paths using BFS and right-hand traversal. Instruction parsing and validation covered by 27 JUnit tests for canonical and compressed paths, with a Maven CLI that benchmarks and times the two traversal strategies against each other.',
       highlights: [
-        { label: 'BFS/DFS' },
-        { label: 'Visualization' }
+        { label: 'BFS & Right-Hand' },
+        { value: '27', label: 'JUnit tests' }
       ],
-      tech: ['Java', 'Algorithms', 'OOP'],
+      tech: ['Java', 'Maven', 'JUnit', 'Algorithms', 'OOP'],
       emoji: '🧩',
       githubUrl: 'https://github.com/harmanpreet-sagar/Maze-Runner'
     },
     {
       title: 'Pacman',
       subtitle: 'Classic Arcade Recreation',
-      description: 'Recreated the classic Pacman game with Python and Pygame. Features ghost AI, score tracking, and authentic arcade gameplay mechanics.',
+      description: 'Pacman recreation in Python and Pygame with arrow-key movement, orb collection, monster collision, sound effects, and persistent high scores. The four ghosts follow scripted patrol routes rather than pathfinding.',
       highlights: [
-        { label: 'Ghost AI' },
+        { label: '4 Scripted Ghosts' },
         { label: 'Pygame' }
       ],
       tech: ['Python', 'Pygame', 'Game Dev'],
