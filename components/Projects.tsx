@@ -9,21 +9,24 @@ interface Project {
     githubUrl: string
     demoUrl?: string
     devpostUrl?: string
+    caseStudyUrl?: string
   }
   
   const projects: Project[] = [
     {
       title: 'F1 Battle Detector',
-      subtitle: 'Real-Time Race Analytics',
-      description: 'Real-time Formula 1 battle detection fusing 3 live OpenF1 data streams across 20 drivers on a 1.5s async polling loop. Composite scoring model ranks battles by weighted gap, closing rate, and pace delta, with a stability filter requiring a battle to persist across 3 consecutive polls before it surfaces. Cut the container image 82% (1.19GB to 210MB) with a multi-stage Docker build.',
+      subtitle: 'Race Replay & Battle Ranking',
+      description: 'Full-stack Formula 1 race replay that streams six real 2025 Grands Prix (167k+ OpenF1 rows) through the same detection pipeline live timing uses, ranking on-track battles by gap, closing rate, pace delta, and the championship points at stake. A live-equivalence test runs 8 laps of the 2025 Hungarian GP through a fake OpenF1 server and through the replay engine, and asserts identical battles at every 1.5-second tick. Runs on stateless Vercel serverless functions by deriving the broadcast position from the wall clock, so every viewer sees the same race moment.',
       highlights: [
-        { value: '82%', label: 'smaller image' },
-        { value: '62', label: 'tests in CI' },
-        { value: '1.5s', label: 'polling loop' }
+        { value: '322', label: 'tests in CI' },
+        { value: '6', label: 'races replayed' },
+        { value: '30-40 ms', label: 'state rebuild per request' }
       ],
-      tech: ['Python', 'FastAPI', 'asyncio', 'Pydantic', 'Next.js', 'TypeScript', 'SWR', 'Docker', 'GitHub Actions'],
+      tech: ['Python', 'FastAPI', 'asyncio', 'Pydantic', 'httpx', 'pytest', 'Next.js', 'TypeScript', 'SWR', 'Tailwind CSS', 'Docker', 'Vercel', 'GitHub Actions'],
       emoji: '🏎️',
-      githubUrl: 'https://github.com/harmanpreet-sagar/F1-Battle-Detector-Summarizer'
+      githubUrl: 'https://github.com/harmanpreet-sagar/F1-Battle-Detector-Summarizer',
+      demoUrl: 'https://f1-battle-detector-summarizer.vercel.app/',
+      caseStudyUrl: '/projects/f1-battle-detector'
     },
     {
       title: 'SCEMAS',
@@ -172,6 +175,21 @@ interface Project {
                       <line x1="10" y1="14" x2="21" y2="3" />
                     </svg>
                     Live Demo
+                  </a>
+                )}
+                {project.caseStudyUrl && (
+                  <a
+                    href={project.caseStudyUrl}
+                    className="project-link-btn project-link-case"
+                  >
+                    {/* Document icon */}
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                      <polyline points="14 2 14 8 20 8" />
+                      <line x1="8" y1="13" x2="16" y2="13" />
+                      <line x1="8" y1="17" x2="13" y2="17" />
+                    </svg>
+                    Case Study
                   </a>
                 )}
                 {project.devpostUrl && (
