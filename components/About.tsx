@@ -6,13 +6,13 @@ export default function About() {
     
     const libraries_and_frameworks = [
         'React', 'Next.js', 'FastAPI', 'Node.js', 'Tailwind CSS', 'SWR', 'FreeRTOS', 'LibCSP',
-        'Pydantic', 'Restinio', 'Firebase', 'JUnit', 'Pytest', 'UVM', 'PyGame', 'XNA Framework', 'Twilio'
+        'asyncio', 'Pydantic', 'httpx', 'PyMuPDF', 'Restinio', 'Firebase', 'JUnit', 'Pytest', 'UVM', 'PyGame', 'XNA Framework', 'Twilio'
     ]
 
     const tools = [
         'Git', 'GitHub', 'GitHub Actions', 'Linux', 'Docker', 'PostgreSQL', 'Supabase', 'MQTT', 'CAN',
         'CMake', 'Maven', 'vcpkg', 'Perforce', 'Jenkins', 'MATLAB', 'Simulink', 'Vitis', 'Arduino',
-        'Atlassian API', 'REST APIs', 'Visual Studio', 'Webflow', 'Figma', 'Notion', 'Vercel', 'Render'
+        'Atlassian REST API', 'Confluence', 'OAuth 2.0', 'REST APIs', 'Visual Studio', 'Webflow', 'Figma', 'Notion', 'Vercel', 'Render'
     ]
 
     const awards = [
@@ -28,7 +28,7 @@ export default function About() {
             <div className="about-content">
                 <div className="about-text">
                     <p>
-                        Software Engineering student at McMaster University (Class of 2027) who has verified SERDES designs in C++, written firmware for satellite subsystems in Embedded C, and led the architecture and development of a full-stack IoT platform. I like working on problems where the software and the system are equally important.
+                        Software Engineering student at McMaster University (Class of 2027) who has verified SERDES designs in C++, written firmware for satellite subsystems in Embedded C, and led the architecture and development of a full-stack IoT platform. I am now a part-time research assistant at McSCert, testing how reliably an LLM pipeline extracts safety claims from AI model cards. I like working on problems where the software and the system are equally important.
                     </p>
                 </div>
                 <div>

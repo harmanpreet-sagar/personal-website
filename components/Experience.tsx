@@ -12,16 +12,28 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    role: 'Incoming Research Assistant, jPipe',
+    role: 'Research Assistant, jPipe (Part-time)',
     company: 'McMaster University, McSCert',
-    date: 'Sept 2026',
-    description: 'Selected to contribute to jPipe, a Java and ANTLR4 DSL compiler for justification diagrams used in safety-critical software certification.',
+    date: 'Sept 2026 — Present',
+    description: 'Working on an LLM pipeline that extracts the safety claims in AI model cards, and the quoted evidence behind them, and turns them into jPipe justification diagrams. Diagnosed all 7 failed quote checks among the 187 quotes extracted from the GPT-5 system card: 5 were real LLM errors such as paraphrases and merged sentences, and 2 were false alarms where the PDF parser’s reading order split a single sentence. Built a Python text-normalization module of 7 ordered rules and a 5-tier quote matcher (exact, normalized, PDF fallback, fuzzy, failed) whose PDF fallback accepts exact matches only, so a paraphrase cannot pass, covered by 21 pytest tests.',
+    metrics: [
+      { value: '187', label: 'LLM-extracted quotes checked' },
+      { value: '7 of 7', label: 'failures diagnosed' },
+      { value: '5-tier', label: 'quote matcher' },
+      { value: '21', label: 'pytest tests' }
+    ]
+  },
+  {
+    role: 'Events Executive',
+    company: 'DeltaHacks',
+    date: 'June 2026 — Present',
+    description: 'Organizing events for the upcoming DeltaHacks, including high school outreach programs and a resume roast in October 2026, followed by events during the hackathon itself.',
     metrics: []
   },
   {
     role: 'Firmware Specialist, PRESET CubeSat',
     company: 'McMaster Interdisciplinary Satellite Team',
-    date: 'Sept 2023 — Present',
+    date: 'Sept 2023 — Oct 2026',
     description: 'Implemented a CubeSat Space Protocol (CSP) server in Embedded C on a Xilinx Zynq ZedBoard, running as a FreeAct task under FreeRTOS over two transports: the internal CAN bus and the ground umbilical used for pre-launch testing. Built the service handlers for firmware update, AXI register access, FSM control, CLI, and science data, including a bounds-checked register-file service with a defined request and reply wire protocol, and ported the whole stack across two board revisions.',
     metrics: [
       { value: '5', label: 'CSP service handlers' },
@@ -45,12 +57,14 @@ const experiences: ExperienceItem[] = [
     role: 'System Architecture & Modelling Intern',
     company: 'Synopsys Inc.',
     date: 'May 2024 — Aug 2025',
-    description: 'Designed a two-tier MATLAB/Simulink regression system, a pre-commit gate backed by a 3-hour nightly deep regression, then parallelized that gate’s Jenkins stages to cut its runtime. Verified high-speed SERDES designs in C++ to full code and functional coverage, and built an HTTP-based trace-observer tool with Restinio.',
+    description: 'Designed a two-tier MATLAB/Simulink regression system, a pre-commit gate backed by a 3-hour nightly deep regression, then parallelized that gate’s Jenkins stages to cut its runtime. Verified high-speed SERDES designs in C++ to full code and functional coverage, and built an HTTP-based trace-observer tool with Restinio. Automated Confluence updates through the Atlassian REST API with OAuth 2.0, triggered on each successful pipeline run, then presented the Confluence tool to 250+ employees in the Digital Verification team; 40+ people adopted it, including users outside my immediate team.',
     metrics: [
       { value: '90%', label: 'fewer broken builds in the depot' },
       { value: '55%', label: 'gate runtime (40 to 18 mins)' },
       { value: '45%', label: 'MLSD model execution speed' },
-      { value: '50%', label: 'less SERDES debug time' }
+      { value: '50%', label: 'less SERDES debug time' },
+      { value: '12+ hrs', label: 'saved per month' },
+      { value: '40+', label: 'Confluence tool users' }
     ]
   },
   {
@@ -69,7 +83,7 @@ const experiences: ExperienceItem[] = [
     date: 'May 2023 — Aug 2023',
     description: 'Improved Drasil\'s validation accuracy and code-generation reliability using Haskell. Generated reproducible outputs across multiple case studies.',
     metrics: [
-      { value: '200K+', label: 'lines updated' },
+      { value: '200K+', label: 'line codebase' },
       { value: '25%', label: 'duplication reduced' }
     ]
   }
