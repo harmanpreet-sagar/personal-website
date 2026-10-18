@@ -11,7 +11,7 @@ export default function Hero() {
         </p>
         <p className="hero-availability">
           <span className="hero-availability-dot" aria-hidden="true" />
-          Graduating June 2027 · Open to new grad roles starting May 2027
+          Open to new grad roles in May 2027
         </p>
         <div className="hero-links">
           <a href="https://github.com/harmanpreet-sagar" className="hero-link" target="_blank" rel="noopener noreferrer">

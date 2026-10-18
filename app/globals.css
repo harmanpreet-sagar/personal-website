@@ -1390,6 +1390,7 @@ html.pl-out .preloader {
   padding: 0.35rem 0.85rem;
   border-radius: 100px;
   background: rgba(13, 148, 136, 0.12);
+  white-space: nowrap;
 }
 
 .hero-availability-dot {
@@ -1675,4 +1676,64 @@ html.pl-out .preloader {
 section.cs-section {
   padding: 0;
   min-height: 0;
+}
+
+/* Project media */
+.project-image.has-media {
+  height: auto;
+  aspect-ratio: 16 / 10;
+  background: #0f0f10;
+}
+
+.project-ascii {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 1.15rem;
+  line-height: 1.15;
+  letter-spacing: 0.35em;
+  color: #2DD4BF;
+}
+
+.project-video {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0.9rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0) 55%);
+  color: #ffffff;
+  text-decoration: none;
+  gap: 0.5rem;
+}
+
+.project-video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.project-video-play svg {
+  width: 26px;
+  height: 26px;
+  margin-left: 3px;
+}
+
+.project-video:hover .project-video-play {
+  background: #FF0033;
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.project-video-label {
+  font-size: 0.8rem;
+  font-weight: 500;
 }
