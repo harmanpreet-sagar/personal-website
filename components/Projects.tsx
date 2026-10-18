@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 interface Project {
     title: string
     subtitle: string
@@ -10,11 +12,22 @@ interface Project {
     demoUrl?: string
     devpostUrl?: string
     caseStudyUrl?: string
+    image?: string
+    imageAlt?: string
+    imageFit?: 'cover' | 'contain'
+    imagePosition?: string
+    videoUrl?: string
+    mediaCaption?: string
+    ascii?: string
   }
   
   const projects: Project[] = [
     {
       title: 'F1 Battle Detector',
+      image: '/images/projects/f1.webp',
+      imageAlt: 'F1 Battle Detector replay dashboard during the 2025 British Grand Prix',
+      imageFit: 'cover',
+      imagePosition: 'top left',
       subtitle: 'Race Replay & Battle Ranking',
       description: 'Full-stack Formula 1 race replay that streams six real 2025 Grands Prix (167k+ OpenF1 rows) through the same detection pipeline live timing uses, ranking on-track battles by gap, closing rate, pace delta, and the championship points at stake. A live-equivalence test runs 8 laps of the 2025 Hungarian GP through a fake OpenF1 server and through the replay engine, and asserts identical battles at every 1.5-second tick. Runs on stateless Vercel serverless functions by deriving the broadcast position from the wall clock, so every viewer sees the same race moment.',
       highlights: [
@@ -30,6 +43,10 @@ interface Project {
     },
     {
       title: 'SCEMAS',
+      image: '/images/projects/scemas.webp',
+      imageAlt: 'SCEMAS landing page for the environmental monitoring platform',
+      imageFit: 'cover',
+      imagePosition: 'top left',
       subtitle: 'Smart City Environmental Monitoring & Alert System',
       description: 'Full-stack IoT monitoring platform with real-time MQTT ingestion, configurable alert thresholds, and SSE-streamed live alerts to a React dashboard. Team lead on a 5-person build spanning 5 subsystems, personally owning Threshold Management and the API Facade while debugging and integrating across the rest.',
       highlights: [
@@ -44,6 +61,10 @@ interface Project {
     },
     {
       title: 'RBC-BizConnect',
+      image: '/images/projects/rbc-bizconnect.webp',
+      imageAlt: 'RBC-BizConnect home page shown on a laptop',
+      imageFit: 'cover',
+      imagePosition: 'center',
       subtitle: 'Investor-Business Matching Platform',
       description: 'Built a scalable platform with secure Firebase authentication and a SQLite-backed data layer. Cut investor-business matching from quadratic to linear time with a single-pass algorithm, letting the platform scale to large datasets.',
       award: '🏆 1st Place — DeltaHacks IX',
@@ -54,6 +75,12 @@ interface Project {
     },
     {
       title: 'MacWater',
+      image: '/images/projects/macwater.webp',
+      imageAlt: 'MacWater prototype home page: Navigate your sip',
+      imageFit: 'cover',
+      imagePosition: 'center',
+      videoUrl: 'https://www.youtube.com/watch?v=_ZAsiUIeOiM',
+      mediaCaption: 'Prototype walkthrough',
       subtitle: 'Campus Water Filter Status Tracker',
       description: 'DeltaHacks X submission built with a 4-person team: a web app giving McMaster students real-time status of campus water filtration systems, showing which filters are working and which need replacement. Owned the backend and database in Node.js and SQL, serving status driven by the team’s image classifier.',
       award: '🎯 DeltaHacks X Submission',
@@ -64,6 +91,10 @@ interface Project {
     },
     {
       title: 'Humans vs Robots',
+      image: '/images/projects/humans-vs-robots.webp',
+      imageAlt: 'Humans vs Robots instructions screen',
+      imageFit: 'cover',
+      imagePosition: 'center',
       subtitle: 'Space Edition Game',
       description: 'Interactive combat game in C# with the XNA Framework, built on object-oriented design with a real-time game loop handling collision detection, projectile physics, and CPU opponent behaviour. Supports keyboard and Xbox 360 controller input.',
       highlights: [
@@ -76,6 +107,10 @@ interface Project {
     },
     {
       title: 'Robotic Car',
+      image: '/images/projects/robotic-car.webp',
+      imageAlt: 'Robotic Car circuit: Arduino Uno, L293D motor driver, HC-SR04 ultrasonic sensor',
+      imageFit: 'cover',
+      imagePosition: 'center',
       subtitle: 'Autonomous Navigation System',
       description: 'Autonomous vehicle that detects obstacles with an ultrasonic sensor and halts to avoid collision. Built on Arduino with motor control circuitry, breadboard assembly, and a dual battery supply, documented with a circuit diagram, schematic, and full component list.',
       highlights: [
@@ -88,6 +123,7 @@ interface Project {
     },
     {
       title: 'Maze Runner',
+      ascii: '#######\n#      \n### ###\n#     #\n### ###\n      #\n#######',
       subtitle: 'Maze Pathfinding Solver',
       description: 'Java maze solver that parses ASCII maze files and computes valid paths using BFS and right-hand traversal. Instruction parsing and validation covered by 27 JUnit tests for canonical and compressed paths, with a Maven CLI that benchmarks and times the two traversal strategies against each other.',
       highlights: [
@@ -100,6 +136,10 @@ interface Project {
     },
     {
       title: 'Pacman',
+      image: '/images/projects/pacman.webp',
+      imageAlt: 'Pacman gameplay with the four ghosts',
+      imageFit: 'cover',
+      imagePosition: 'center',
       subtitle: 'Classic Arcade Recreation',
       description: 'Pacman recreation in Python and Pygame with arrow-key movement, orb collection, monster collision, sound effects, and persistent high scores. The four ghosts follow scripted patrol routes rather than pathfinding.',
       highlights: [
@@ -119,8 +159,34 @@ interface Project {
         <div className="projects-grid">
           {projects.map((project, index) => (
             <div key={index} className="project-card">
-              <div className="project-image">
-                {project.emoji}
+              <div className={`project-image${project.image || project.ascii ? ' has-media' : ''}`}>
+                {project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={project.imageAlt ?? project.title}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 480px"
+                    style={{ objectFit: project.imageFit ?? 'cover', objectPosition: project.imagePosition ?? 'center' }}
+                  />
+                ) : project.ascii ? (
+                  <pre className="project-ascii" aria-label="Example maze input from the repository">{project.ascii}</pre>
+                ) : (
+                  project.emoji
+                )}
+                {project.videoUrl && (
+                  <a
+                    href={project.videoUrl}
+                    className="project-video"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Watch the ${project.title} ${project.mediaCaption ?? 'video'} on YouTube`}
+                  >
+                    <span className="project-video-play" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+                    </span>
+                    <span className="project-video-label">{project.mediaCaption ?? 'Watch video'}</span>
+                  </a>
+                )}
               </div>
               <div className="project-content">
                 <h3 className="project-title">{project.title}</h3>
