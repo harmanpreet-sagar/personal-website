@@ -19,6 +19,7 @@ interface Project {
     videoUrl?: string
     mediaCaption?: string
     ascii?: string
+    featured?: boolean
   }
   
   const projects: Project[] = [
@@ -39,7 +40,29 @@ interface Project {
       emoji: '🏎️',
       githubUrl: 'https://github.com/harmanpreet-sagar/F1-Battle-Detector-Summarizer',
       demoUrl: 'https://f1-battle-detector-summarizer.vercel.app/',
-      caseStudyUrl: '/projects/f1-battle-detector'
+      caseStudyUrl: '/projects/f1-battle-detector',
+      featured: true
+    },
+    {
+      title: 'RunwayZero',
+      image: '/images/projects/runwayzero-ai-call.webp',
+      imageAlt: 'RunwayZero surface scope at Boston Logan: a vehicle holds short of runway 15R/33L while the ML player draws its forecast cone for an approaching aircraft',
+      imageFit: 'cover',
+      imagePosition: 'top left',
+      subtitle: 'Human vs. AI Runway-Crossing Game',
+      description: 'Controller-training game on real recorded Boston Logan surface traffic: the replay freezes as a vehicle holds short of a runway, you call CLEAR or HOLD with a confidence, and an ML player makes the same call before the recording reveals what really happened. A Python pipeline injects surveillance faults for Fog mode and forecasts aircraft with constant-velocity, Kalman-filter and LightGBM-corrected models; both players are scored by Brier score. Built in a weekend at HackRPI 2026 with Harnoor Sagar, who built the front end.',
+      highlights: [
+        { value: '20', label: 'real crossings' },
+        { value: '3', label: 'modes incl. Fog' },
+        { value: '40', label: 'tests in CI' }
+      ],
+      tech: ['Python', 'NumPy', 'pandas', 'scikit-learn', 'LightGBM', 'Kalman Filter', 'Gemini API', 'JSON Schema', 'pytest', 'Next.js', 'React', 'TypeScript', 'Vercel', 'GitHub Actions'],
+      emoji: '🛬',
+      githubUrl: 'https://github.com/harmanpreet-sagar/RunwayZero',
+      demoUrl: 'https://runway-zero.vercel.app',
+      devpostUrl: 'https://devpost.com/software/runwayzero',
+      caseStudyUrl: '/projects/runwayzero',
+      featured: true
     },
     {
       title: 'SCEMAS',
@@ -152,128 +175,144 @@ interface Project {
     }
   ]
   
+  const featured = projects.filter((p) => p.featured)
+  const others = projects.filter((p) => !p.featured)
+
+  function ProjectCard({ project, index }: { project: Project; index: number }) {
+    return (
+      <div key={index} className={`project-card${project.featured ? ' is-featured' : ''}`}>
+        <div className={`project-image${project.image || project.ascii ? ' has-media' : ''}`}>
+          {project.image ? (
+            <Image
+              src={project.image}
+              alt={project.imageAlt ?? project.title}
+              fill
+              sizes="(max-width: 900px) 100vw, 480px"
+              style={{ objectFit: project.imageFit ?? 'cover', objectPosition: project.imagePosition ?? 'center' }}
+            />
+          ) : project.ascii ? (
+            <pre className="project-ascii" aria-label="Example maze input from the repository">{project.ascii}</pre>
+          ) : (
+            project.emoji
+          )}
+          {project.videoUrl && (
+            <a
+              href={project.videoUrl}
+              className="project-video"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Watch the ${project.title} ${project.mediaCaption ?? 'video'} on YouTube`}
+            >
+              <span className="project-video-play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+              </span>
+              <span className="project-video-label">{project.mediaCaption ?? 'Watch video'}</span>
+            </a>
+          )}
+        </div>
+        <div className="project-content">
+          <h3 className="project-title">{project.title}</h3>
+          <p className="project-subtitle">{project.subtitle}</p>
+          <p className="project-description">{project.description}</p>
+          <div className="project-highlights">
+            {project.award && (
+              <span className="project-award">{project.award}</span>
+            )}
+            {project.highlights?.map((highlight, highlightIndex) => (
+              <div key={highlightIndex} className="project-highlight">
+                {highlight.value && (
+                  <span className="project-highlight-value">{highlight.value}</span>
+                )}
+                <span className="project-highlight-label">{highlight.label}</span>
+              </div>
+            ))}
+          </div>
+          <div className="project-tech">
+            {project.tech.map((tech, techIndex) => (
+              <span key={techIndex}>
+                {tech}
+                {techIndex < project.tech.length - 1 && ' • '}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="project-links">
+          <a
+            href={project.githubUrl}
+            className="project-link-btn project-link-github"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {/* GitHub mark */}
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+            GitHub
+          </a>
+          {project.demoUrl && (
+            <a
+              href={project.demoUrl}
+              className="project-link-btn project-link-demo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {/* External link icon */}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              Live Demo
+            </a>
+          )}
+          {project.caseStudyUrl && (
+            <a
+              href={project.caseStudyUrl}
+              className="project-link-btn project-link-case"
+            >
+              {/* Document icon */}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="8" y1="13" x2="16" y2="13" />
+                <line x1="8" y1="17" x2="13" y2="17" />
+              </svg>
+              Case Study
+            </a>
+          )}
+          {project.devpostUrl && (
+            <a
+              href={project.devpostUrl}
+              className="project-link-btn project-link-devpost"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {/* Devpost "D" logomark */}
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M6 3h6.5C17.09 3 21 6.91 21 11.5S17.09 20 12.5 20H6V3zm4 3.5v10h2.5c2.76 0 5-2.24 5-5s-2.24-5-5-5H10z" />
+              </svg>
+              Devpost
+            </a>
+          )}
+        </div>
+      </div>
+    )
+  }
+
   export default function Projects() {
     return (
       <section id="projects">
         <h2 className="section-title">Projects</h2>
+        <h3 className="projects-subhead">Featured</h3>
+        <div className="projects-grid projects-featured">
+          {featured.map((project, index) => (
+            <ProjectCard key={project.title} project={project} index={index} />
+          ))}
+        </div>
+        <h3 className="projects-subhead">More projects</h3>
         <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div key={index} className="project-card">
-              <div className={`project-image${project.image || project.ascii ? ' has-media' : ''}`}>
-                {project.image ? (
-                  <Image
-                    src={project.image}
-                    alt={project.imageAlt ?? project.title}
-                    fill
-                    sizes="(max-width: 900px) 100vw, 480px"
-                    style={{ objectFit: project.imageFit ?? 'cover', objectPosition: project.imagePosition ?? 'center' }}
-                  />
-                ) : project.ascii ? (
-                  <pre className="project-ascii" aria-label="Example maze input from the repository">{project.ascii}</pre>
-                ) : (
-                  project.emoji
-                )}
-                {project.videoUrl && (
-                  <a
-                    href={project.videoUrl}
-                    className="project-video"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Watch the ${project.title} ${project.mediaCaption ?? 'video'} on YouTube`}
-                  >
-                    <span className="project-video-play" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
-                    </span>
-                    <span className="project-video-label">{project.mediaCaption ?? 'Watch video'}</span>
-                  </a>
-                )}
-              </div>
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-subtitle">{project.subtitle}</p>
-                <p className="project-description">{project.description}</p>
-                <div className="project-highlights">
-                  {project.award && (
-                    <span className="project-award">{project.award}</span>
-                  )}
-                  {project.highlights?.map((highlight, highlightIndex) => (
-                    <div key={highlightIndex} className="project-highlight">
-                      {highlight.value && (
-                        <span className="project-highlight-value">{highlight.value}</span>
-                      )}
-                      <span className="project-highlight-label">{highlight.label}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="project-tech">
-                  {project.tech.map((tech, techIndex) => (
-                    <span key={techIndex}>
-                      {tech}
-                      {techIndex < project.tech.length - 1 && ' • '}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className="project-links">
-                <a
-                  href={project.githubUrl}
-                  className="project-link-btn project-link-github"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {/* GitHub mark */}
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-                  </svg>
-                  GitHub
-                </a>
-                {project.demoUrl && (
-                  <a
-                    href={project.demoUrl}
-                    className="project-link-btn project-link-demo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {/* External link icon */}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
-                      <polyline points="15 3 21 3 21 9" />
-                      <line x1="10" y1="14" x2="21" y2="3" />
-                    </svg>
-                    Live Demo
-                  </a>
-                )}
-                {project.caseStudyUrl && (
-                  <a
-                    href={project.caseStudyUrl}
-                    className="project-link-btn project-link-case"
-                  >
-                    {/* Document icon */}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                      <polyline points="14 2 14 8 20 8" />
-                      <line x1="8" y1="13" x2="16" y2="13" />
-                      <line x1="8" y1="17" x2="13" y2="17" />
-                    </svg>
-                    Case Study
-                  </a>
-                )}
-                {project.devpostUrl && (
-                  <a
-                    href={project.devpostUrl}
-                    className="project-link-btn project-link-devpost"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {/* Devpost "D" logomark */}
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M6 3h6.5C17.09 3 21 6.91 21 11.5S17.09 20 12.5 20H6V3zm4 3.5v10h2.5c2.76 0 5-2.24 5-5s-2.24-5-5-5H10z" />
-                    </svg>
-                    Devpost
-                  </a>
-                )}
-              </div>
-            </div>
+          {others.map((project, index) => (
+            <ProjectCard key={project.title} project={project} index={index} />
           ))}
         </div>
       </section>

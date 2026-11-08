@@ -1737,3 +1737,108 @@ section.cs-section {
   font-size: 0.8rem;
   font-weight: 500;
 }
+
+/* Featured projects */
+.projects-subhead {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 1rem;
+}
+
+.projects-featured {
+  margin-bottom: 3rem;
+}
+
+.project-card.is-featured {
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+[data-theme="dark"] .project-card.is-featured {
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+/* Case study additions */
+.cs-section ul {
+  margin: 0 0 1rem 1.25rem;
+  opacity: 0.85;
+}
+
+.cs-section li {
+  margin-bottom: 0.6rem;
+}
+
+.cs-figure {
+  margin: 0 0 2.75rem;
+}
+
+.cs-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--text) 12%, transparent);
+  display: block;
+}
+
+.cs-section .cs-figure {
+  margin: 1.25rem 0 0;
+}
+
+.cs-figure figcaption {
+  font-size: 0.85rem;
+  opacity: 0.65;
+  margin-top: 0.6rem;
+}
+
+.cs-scoring {
+  display: inline-grid;
+  gap: 0.35rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--text) 12%, transparent);
+  font-size: 0.9rem;
+}
+
+.cs-scoring-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.cs-scoring-points {
+  min-width: 2.5ch;
+  text-align: right;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.cs-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.cs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.cs-table th,
+.cs-table td {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--text) 12%, transparent);
+}
+
+.cs-table th {
+  font-weight: 600;
+}
+
+.cs-table td:not(:first-child),
+.cs-table th:not(:first-child) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
