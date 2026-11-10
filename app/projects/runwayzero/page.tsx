@@ -94,14 +94,15 @@ export default function RunwayZeroCaseStudy() {
       <ThemeToggle />
 
       <main className="container cs">
-        <p className="cs-kicker">Case study &middot; RunwayZero &middot; HackRPI 2026</p>
+        <p className="cs-kicker">Case study &middot; RunwayZero &middot; Best In The Clouds Hack, HackRPI 2026</p>
         <h1 className="cs-title">Can you clear a runway crossing better than an AI?</h1>
         <p className="cs-lede">
           RunwayZero is a training game built on real recorded surface traffic at Boston Logan. A
           vehicle is holding short of a runway, an aircraft is coming, and you have to decide.
           An ML player makes the same call from the same frames, then the recording shows what
-          really happened. I built the data pipeline, the forecasting models and the evaluation;
-          Harnoor Sagar built the front end.
+          really happened. Harnoor Sagar and I built it together at HackRPI 2026, where it won Best
+          In The Clouds Hack among 80 teams. I led the data pipeline, the forecasting models and the
+          evaluation; Harnoor led the front end.
         </p>
 
         <div className="cs-actions">
@@ -191,18 +192,21 @@ export default function RunwayZeroCaseStudy() {
             The data is one hour of Logan surface traffic from the CMU Amelia-48 dataset (FAA SWIM
             data), one report per second. A Python truth layer cleans the tracks, builds the airport
             map, and puts a crossing zone wherever vehicles cross a runway. The puzzle generator
-            then cuts rounds out of real moments. Two rules keep them honest:
+            then cuts rounds out of real moments. One finding shaped everything: in the recorded hour,
+            every real crossing was safe (the closest any aircraft came was 150 m), so &ldquo;always
+            CLEAR&rdquo; would have been unbeatable. So every one of the 20 rounds is a what-if built
+            from real tracks, under two rules:
           </p>
           <ul>
             <li>
-              <strong>Only moments where the vehicle really crossed.</strong> If the vehicle held in
-              the recording, nobody knows what CLEAR would have done, so that moment is skipped.
+              <strong>The vehicle always replays a crossing it really made.</strong> We never invent a
+              path for it, so the reveal shows the consequence of a real crossing.
             </li>
             <li>
-              <strong>What-if rounds replay real tracks, shifted in time.</strong> Some vehicles
-              waited at the hold line while jets used the runway. For those, the vehicle replays its
-              own real crossing starting at the freeze, and every aircraft moves exactly as
-              recorded. These rounds are labelled WHAT IF, but only after you lock in.
+              <strong>Only the timing is shifted.</strong> Some vehicles waited at the hold line while
+              jets used the runway. For those moments, the vehicle&rsquo;s own real crossing starts at
+              the freeze, and every aircraft moves exactly as recorded. Rounds are labelled WHAT IF,
+              but only after you lock in.
             </li>
           </ul>
           <p>
