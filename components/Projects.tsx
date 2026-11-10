@@ -50,9 +50,10 @@ interface Project {
       imageFit: 'cover',
       imagePosition: 'top left',
       subtitle: 'Human vs. AI Runway-Crossing Game',
-      description: 'Controller-training game on real recorded Boston Logan surface traffic: the replay freezes as a vehicle holds short of a runway, you call CLEAR or HOLD with a confidence, and an ML player makes the same call before the recording reveals what really happened. A Python pipeline injects surveillance faults for Fog mode and forecasts aircraft with constant-velocity, Kalman-filter and LightGBM-corrected models; both players are scored by Brier score. Built in a weekend at HackRPI 2026 with Harnoor Sagar, who built the front end.',
+      award: '🏆 Best In The Clouds Hack, HackRPI 2026',
+      description: 'Controller-training game on real recorded Boston Logan surface traffic: the replay freezes as a vehicle holds short of a runway, you call CLEAR or HOLD with a confidence, and an ML player makes the same call before the recording reveals what really happened. A Python pipeline injects surveillance faults for Fog mode and forecasts aircraft with constant-velocity, Kalman-filter and LightGBM-corrected models; both players are scored by Brier score. Built with Harnoor Sagar at HackRPI 2026, where it won Best In The Clouds Hack among 80 teams.',
       highlights: [
-        { value: '20', label: 'real crossings' },
+        { value: '20', label: 'puzzles from real tracks' },
         { value: '3', label: 'modes incl. Fog' },
         { value: '40', label: 'tests in CI' }
       ],
