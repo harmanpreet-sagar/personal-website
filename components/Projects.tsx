@@ -4,6 +4,7 @@ interface Project {
     title: string
     subtitle: string
     description: string
+    summary?: string
     highlights?: Array<{ value?: string; label: string }>
     award?: string
     tech: string[]
@@ -30,6 +31,7 @@ interface Project {
       imageFit: 'cover',
       imagePosition: 'top left',
       subtitle: 'Race Replay & Battle Ranking',
+      summary: 'Full-stack Formula 1 race replay that streams six real 2025 Grands Prix through the same detection pipeline live timing uses, ranking on-track battles by gap, closing rate, pace delta and the championship points at stake. Runs on stateless Vercel serverless functions, so every viewer sees the same race moment.',
       description: 'Full-stack Formula 1 race replay that streams six real 2025 Grands Prix (167k+ OpenF1 rows) through the same detection pipeline live timing uses, ranking on-track battles by gap, closing rate, pace delta, and the championship points at stake. A live-equivalence test runs 8 laps of the 2025 Hungarian GP through a fake OpenF1 server and through the replay engine, and asserts identical battles at every 1.5-second tick. Runs on stateless Vercel serverless functions by deriving the broadcast position from the wall clock, so every viewer sees the same race moment.',
       highlights: [
         { value: '322', label: 'tests in CI' },
@@ -50,6 +52,7 @@ interface Project {
       imageFit: 'cover',
       imagePosition: 'top left',
       subtitle: 'Human vs. AI Runway-Crossing Game',
+      summary: 'Controller-training game on real Boston Logan surface traffic: call CLEAR or HOLD with a confidence, then an ML player forecasting aircraft with Kalman-filter and LightGBM models makes the same call before the recording reveals what happened. Scored by Brier score.',
       award: '🏆 Best In The Clouds Hack, HackRPI 2026',
       description: 'Controller-training game on real recorded Boston Logan surface traffic: the replay freezes as a vehicle holds short of a runway, you call CLEAR or HOLD with a confidence, and an ML player makes the same call before the recording reveals what really happened. A Python pipeline injects surveillance faults for Fog mode and forecasts aircraft with constant-velocity, Kalman-filter and LightGBM-corrected models; both players are scored by Brier score. Built with Harnoor Sagar at HackRPI 2026, where it won Best In The Clouds Hack among 80 teams.',
       highlights: [
@@ -63,6 +66,30 @@ interface Project {
       demoUrl: 'https://runway-zero.vercel.app',
       devpostUrl: 'https://devpost.com/software/runwayzero',
       caseStudyUrl: '/projects/runwayzero',
+      featured: true
+    },
+    {
+      title: 'Revisit',
+      image: '/images/projects/revisit-film.webp',
+      imageAlt: 'Revisit film player paused on Lake Mead in 2010, captioned with a verified claim about the drought',
+      imageFit: 'cover',
+      imagePosition: 'center',
+      videoUrl: 'https://www.youtube.com/watch?v=PfudpB_m-NY',
+      mediaCaption: 'Demo video',
+      subtitle: 'Narrated Satellite Films of 40 Years of Change',
+      summary: 'Type any place on Earth and get a narrated, sourced film of how it changed since 1984, built from 43 summers of NASA Landsat imagery. An AI agent explains each change and keeps only claims whose quotes it verified word for word. Built with Vanessa Lai at Hack The Nest 2026.',
+      description: 'Type any place on Earth and get a 60 to 90 second narrated, sourced film of how it changed since 1984. A Python pipeline builds one cloud-masked Landsat composite per summer, measures vegetation, water and built-up land, and detects lasting changes in two layers (place-wide trends and 4 ha pixel patches). A cause agent on Exa and Gemini keeps only claims whose quotes it verified word for word in code, with confidence set by rule. Built with Vanessa Lai at Hack The Nest 2026; she led the 3D globe, film player and ElevenLabs narration.',
+      highlights: [
+        { value: '7 of 7', label: 'test changes found' },
+        { value: '0', label: 'unsupported claims' },
+        { value: '43', label: 'summers of Landsat' }
+      ],
+      tech: ['Python', 'FastAPI', 'NumPy', 'STAC', 'Gemini API', 'Exa', 'JSON Schema', 'pytest', 'Next.js', 'React Three Fiber', 'TypeScript', 'ElevenLabs', 'Tailwind CSS', 'GitHub Actions'],
+      emoji: '🛰️',
+      githubUrl: 'https://github.com/vanessa-laii/Hack-The-Nest',
+      demoUrl: 'https://revisit-earth.vercel.app/',
+      devpostUrl: 'https://devpost.com/software/earth-memories',
+      caseStudyUrl: '/projects/revisit',
       featured: true
     },
     {
@@ -214,7 +241,7 @@ interface Project {
         <div className="project-content">
           <h3 className="project-title">{project.title}</h3>
           <p className="project-subtitle">{project.subtitle}</p>
-          <p className="project-description">{project.description}</p>
+          <p className="project-description">{project.featured && project.summary ? project.summary : project.description}</p>
           <div className="project-highlights">
             {project.award && (
               <span className="project-award">{project.award}</span>

@@ -5,14 +5,14 @@ export default function About() {
     ]
     
     const libraries_and_frameworks = [
-        'React', 'Next.js', 'FastAPI', 'Node.js', 'Tailwind CSS', 'SWR', 'FreeRTOS', 'LibCSP',
+        'React', 'Next.js', 'FastAPI', 'Node.js', 'Tailwind CSS', 'SWR', 'React Three Fiber', 'NumPy', 'FreeRTOS', 'LibCSP',
         'asyncio', 'Pydantic', 'httpx', 'PyMuPDF', 'Restinio', 'Firebase', 'JUnit', 'Pytest', 'UVM', 'PyGame', 'XNA Framework', 'Twilio'
     ]
 
     const tools = [
         'Git', 'GitHub', 'GitHub Actions', 'Linux', 'Docker', 'PostgreSQL', 'Supabase', 'MQTT', 'CAN',
         'CMake', 'Maven', 'vcpkg', 'Perforce', 'Jenkins', 'MATLAB', 'Simulink', 'Vitis', 'Arduino',
-        'Atlassian REST API', 'Confluence', 'OAuth 2.0', 'REST APIs', 'Visual Studio', 'Webflow', 'Figma', 'Notion', 'Vercel', 'Render'
+        'Atlassian REST API', 'Confluence', 'OAuth 2.0', 'REST APIs', 'Visual Studio', 'Webflow', 'Figma', 'Notion', 'Vercel', 'Render', 'Gemini API', 'ElevenLabs'
     ]
 
     const awards = [
