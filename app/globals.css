@@ -2861,3 +2861,123 @@ footer {
   font-size: 0.8rem;
   white-space: nowrap;
 }
+
+/* ---------- About (A2): intro + recognition left, status panel right ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+.about-grid .about-text .about-opener {
+  font-size: 1.9rem;
+  line-height: 1.3;
+  margin-bottom: 1.25rem;
+}
+
+.about-grid .about-text p {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+.recognition {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.75rem 0 0;
+  padding: 0;
+}
+
+.recognition-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: rgba(20, 27, 48, 0.7);
+  font-size: 0.85rem;
+  color: var(--body);
+}
+
+.recognition-pill b {
+  color: var(--pop);
+  font-weight: 600;
+}
+
+.status-panel {
+  justify-self: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 0.35rem 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.status-row {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1rem 1.4rem;
+  border-top: 1px solid var(--border);
+}
+
+.status-row:first-child {
+  border-top: none;
+}
+
+.status-row dt {
+  padding-top: 0.2rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.status-row dd {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  max-width: 21rem;
+}
+
+.status-title {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.status-detail {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-grid .about-text .about-opener {
+    font-size: 1.55rem;
+  }
+
+  .status-panel {
+    justify-self: stretch;
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .status-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
