@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Source_Serif_4, DM_Sans } from 'next/font/google'
+import { Source_Serif_4, DM_Sans, JetBrains_Mono } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
@@ -10,6 +10,12 @@ const sourceSerif = Source_Serif_4({
   variable: '--font-source-serif',
 })
 
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono',
+})
+
 const dmSans = DM_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600'],
@@ -18,7 +24,7 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: 'Harmanpreet Singh Sagar | Software Engineer',
-  description: 'Software Engineering student at McMaster University',
+  description: 'Final-year Software Engineering student at McMaster building flight software, chip-verification tooling, F1 race replays, and AI agents that check their sources.',
 }
 
 export default function RootLayout({
@@ -27,20 +33,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${sourceSerif.variable} ${dmSans.variable}`}>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  const savedTheme = localStorage.getItem('theme') || 'light';
-                  document.documentElement.setAttribute('data-theme', savedTheme);
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
+      <body className={`${sourceSerif.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}>
         <script
           dangerouslySetInnerHTML={{
             __html: `

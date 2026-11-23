@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import BackgroundElements from '@/components/BackgroundElements'
-import ThemeToggle from '@/components/ThemeToggle'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
@@ -109,7 +108,6 @@ export default function RevisitCaseStudy() {
         <a href="/" className="logo">Harmanpreet Singh Sagar</a>
         <a href="/#projects" className="cs-back">&larr; All projects</a>
       </header>
-      <ThemeToggle />
 
       <main className="container cs">
         <p className="cs-kicker">Case study &middot; Revisit &middot; Hack The Nest 2026</p>
