@@ -1,20 +1,6 @@
+import Skills from './Skills'
+
 export default function About() {
-    const languages = [
-        'Python', 'TypeScript', 'JavaScript', 'C++', 'Java', 'C', 'Embedded C', 'C#', 'SQL', 'Haskell',
-        'HTML', 'CSS', 'Bash', 'SystemVerilog'
-    ]
-    
-    const libraries_and_frameworks = [
-        'React', 'Next.js', 'FastAPI', 'Node.js', 'Tailwind CSS', 'SWR', 'React Three Fiber', 'NumPy', 'FreeRTOS', 'LibCSP',
-        'asyncio', 'Pydantic', 'httpx', 'PyMuPDF', 'Restinio', 'Firebase', 'JUnit', 'Pytest', 'UVM', 'PyGame', 'XNA Framework', 'Twilio'
-    ]
-
-    const tools = [
-        'Git', 'GitHub', 'GitHub Actions', 'Linux', 'Docker', 'PostgreSQL', 'Supabase', 'MQTT', 'CAN',
-        'CMake', 'Maven', 'vcpkg', 'Perforce', 'Jenkins', 'MATLAB', 'Simulink', 'Vitis', 'Arduino',
-        'Atlassian REST API', 'Confluence', 'OAuth 2.0', 'REST APIs', 'Visual Studio', 'Webflow', 'Figma', 'Notion', 'Vercel', 'Render', 'Gemini API', 'ElevenLabs'
-    ]
-
     const awards = [
         { name: "Dean's Honour List", value: '3x' },
         { name: 'Lawrence Tse Research Award', value: '$6,000' },
@@ -42,34 +28,7 @@ export default function About() {
                 </div>
             </div>
 
-            <div className="skills-section">
-                <div className="skills-category">
-                    <h3 style={{ fontSize: '0.85rem', color: 'var(--text)', opacity: 0.5, marginBottom: '0.75rem' }}>Languages</h3>
-                    <div className="skills-list">
-                        {languages.map((language) => (
-                            <span key={language} className="skill-tag">{language}</span>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="skills-category">
-                    <h3 style={{ fontSize: '0.85rem', color: 'var(--text)', opacity: 0.5, marginBottom: '0.75rem' }}>Libraries & Frameworks</h3>
-                    <div className="skills-list">
-                        {libraries_and_frameworks.map((library_and_framework) => (
-                            <span key={library_and_framework} className="skill-tag">{library_and_framework}</span>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="skills-category">
-                    <h3 style={{ fontSize: '0.85rem', color: 'var(--text)', opacity: 0.5, marginBottom: '0.75rem' }}>Tools</h3>
-                    <div className="skills-list">
-                        {tools.map((tool) => (
-                            <span key={tool} className="skill-tag">{tool}</span>
-                        ))}
-                    </div>
-                </div>
-            </div>
+            <Skills />
         </section>
     )
 }

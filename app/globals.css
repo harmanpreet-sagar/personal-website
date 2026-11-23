@@ -1864,3 +1864,40 @@ section.cs-section {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
+
+/* Skills v2: grouped by domain */
+.skills-v2 {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.skills-groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.skills-group-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  opacity: 0.5;
+  margin: 0 0 0.75rem;
+}
+
+[data-theme="dark"] .skills-v2 {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 900px) {
+  .skills-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-groups {
+    grid-template-columns: 1fr;
+  }
+}
