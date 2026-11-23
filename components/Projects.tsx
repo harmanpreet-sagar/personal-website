@@ -4,6 +4,7 @@ interface Project {
     title: string
     subtitle: string
     description: string
+    summary?: string
     highlights?: Array<{ value?: string; label: string }>
     award?: string
     tech: string[]
@@ -30,6 +31,7 @@ interface Project {
       imageFit: 'cover',
       imagePosition: 'top left',
       subtitle: 'Race Replay & Battle Ranking',
+      summary: 'Full-stack Formula 1 race replay that streams six real 2025 Grands Prix through the same detection pipeline live timing uses, ranking on-track battles by gap, closing rate, pace delta and the championship points at stake. Runs on stateless Vercel serverless functions, so every viewer sees the same race moment.',
       description: 'Full-stack Formula 1 race replay that streams six real 2025 Grands Prix (167k+ OpenF1 rows) through the same detection pipeline live timing uses, ranking on-track battles by gap, closing rate, pace delta, and the championship points at stake. A live-equivalence test runs 8 laps of the 2025 Hungarian GP through a fake OpenF1 server and through the replay engine, and asserts identical battles at every 1.5-second tick. Runs on stateless Vercel serverless functions by deriving the broadcast position from the wall clock, so every viewer sees the same race moment.',
       highlights: [
         { value: '322', label: 'tests in CI' },
@@ -50,6 +52,7 @@ interface Project {
       imageFit: 'cover',
       imagePosition: 'top left',
       subtitle: 'Human vs. AI Runway-Crossing Game',
+      summary: 'Controller-training game on real Boston Logan surface traffic: call CLEAR or HOLD with a confidence, then an ML player forecasting aircraft with Kalman-filter and LightGBM models makes the same call before the recording reveals what happened. Scored by Brier score.',
       award: '🏆 Best In The Clouds Hack, HackRPI 2026',
       description: 'Controller-training game on real recorded Boston Logan surface traffic: the replay freezes as a vehicle holds short of a runway, you call CLEAR or HOLD with a confidence, and an ML player makes the same call before the recording reveals what really happened. A Python pipeline injects surveillance faults for Fog mode and forecasts aircraft with constant-velocity, Kalman-filter and LightGBM-corrected models; both players are scored by Brier score. Built with Harnoor Sagar at HackRPI 2026, where it won Best In The Clouds Hack among 80 teams.',
       highlights: [
@@ -66,7 +69,32 @@ interface Project {
       featured: true
     },
     {
+      title: 'Revisit',
+      image: '/images/projects/revisit-film.webp',
+      imageAlt: 'Revisit film player paused on Lake Mead in 2010, captioned with a verified claim about the drought',
+      imageFit: 'cover',
+      imagePosition: 'center',
+      videoUrl: 'https://www.youtube.com/watch?v=PfudpB_m-NY',
+      mediaCaption: 'Demo video',
+      subtitle: 'Narrated Satellite Films of 40 Years of Change',
+      summary: 'Type any place on Earth and get a narrated, sourced film of how it changed since 1984, built from 43 summers of NASA Landsat imagery. An AI agent explains each change and keeps only claims whose quotes it verified word for word. Built with Vanessa Lai at Hack The Nest 2026.',
+      description: 'Type any place on Earth and get a 60 to 90 second narrated, sourced film of how it changed since 1984. A Python pipeline builds one cloud-masked Landsat composite per summer, measures vegetation, water and built-up land, and detects lasting changes in two layers (place-wide trends and 4 ha pixel patches). A cause agent on Exa and Gemini keeps only claims whose quotes it verified word for word in code, with confidence set by rule. Built with Vanessa Lai at Hack The Nest 2026; she led the 3D globe, film player and ElevenLabs narration.',
+      highlights: [
+        { value: '7 of 7', label: 'test changes found' },
+        { value: '0', label: 'unsupported claims' },
+        { value: '43', label: 'summers of Landsat' }
+      ],
+      tech: ['Python', 'FastAPI', 'NumPy', 'STAC', 'Gemini API', 'Exa', 'JSON Schema', 'pytest', 'Next.js', 'React Three Fiber', 'TypeScript', 'ElevenLabs', 'Tailwind CSS', 'GitHub Actions'],
+      emoji: '🛰️',
+      githubUrl: 'https://github.com/vanessa-laii/Hack-The-Nest',
+      demoUrl: 'https://revisit-earth.vercel.app/',
+      devpostUrl: 'https://devpost.com/software/earth-memories',
+      caseStudyUrl: '/projects/revisit',
+      featured: true
+    },
+    {
       title: 'SCEMAS',
+      summary: 'Full-stack IoT monitoring with MQTT ingestion, alert thresholds, and live SSE alerts to a React dashboard. Team lead on a 5-person build.',
       image: '/images/projects/scemas.webp',
       imageAlt: 'SCEMAS landing page for the environmental monitoring platform',
       imageFit: 'cover',
@@ -85,6 +113,7 @@ interface Project {
     },
     {
       title: 'RBC-BizConnect',
+      summary: 'Investor-business matching platform with Firebase auth, where a single-pass algorithm cut matching from quadratic to linear time.',
       image: '/images/projects/rbc-bizconnect.webp',
       imageAlt: 'RBC-BizConnect home page shown on a laptop',
       imageFit: 'cover',
@@ -99,6 +128,7 @@ interface Project {
     },
     {
       title: 'MacWater',
+      summary: 'Real-time status of McMaster’s campus water filters, built with a 4-person team. I owned the Node.js backend and database.',
       image: '/images/projects/macwater.webp',
       imageAlt: 'MacWater prototype home page: Navigate your sip',
       imageFit: 'cover',
@@ -115,6 +145,7 @@ interface Project {
     },
     {
       title: 'Humans vs Robots',
+      summary: 'Space combat game in C# and XNA with a real-time game loop, collisions, projectile physics and CPU opponents.',
       image: '/images/projects/humans-vs-robots.webp',
       imageAlt: 'Humans vs Robots instructions screen',
       imageFit: 'cover',
@@ -131,6 +162,7 @@ interface Project {
     },
     {
       title: 'Robotic Car',
+      summary: 'Arduino car that detects obstacles with an ultrasonic sensor and halts before a collision.',
       image: '/images/projects/robotic-car.webp',
       imageAlt: 'Robotic Car circuit: Arduino Uno, L293D motor driver, HC-SR04 ultrasonic sensor',
       imageFit: 'cover',
@@ -147,6 +179,7 @@ interface Project {
     },
     {
       title: 'Maze Runner',
+      summary: 'Java maze solver using BFS and right-hand traversal, with 27 JUnit tests and a Maven CLI that benchmarks both strategies.',
       ascii: '#######\n#      \n### ###\n#     #\n### ###\n      #\n#######',
       subtitle: 'Maze Pathfinding Solver',
       description: 'Java maze solver that parses ASCII maze files and computes valid paths using BFS and right-hand traversal. Instruction parsing and validation covered by 27 JUnit tests for canonical and compressed paths, with a Maven CLI that benchmarks and times the two traversal strategies against each other.',
@@ -160,6 +193,7 @@ interface Project {
     },
     {
       title: 'Pacman',
+      summary: 'Pacman in Python and Pygame with scripted ghosts, sound effects and persistent high scores.',
       image: '/images/projects/pacman.webp',
       imageAlt: 'Pacman gameplay with the four ghosts',
       imageFit: 'cover',
@@ -176,7 +210,11 @@ interface Project {
     }
   ]
   
-  const featured = projects.filter((p) => p.featured)
+  // Newest first: Revisit leads the featured rows.
+  const FEATURED_ORDER = ['Revisit', 'F1 Battle Detector', 'RunwayZero']
+  const featured = projects
+    .filter((p) => p.featured)
+    .sort((a, b) => FEATURED_ORDER.indexOf(a.title) - FEATURED_ORDER.indexOf(b.title))
   const others = projects.filter((p) => !p.featured)
 
   function ProjectCard({ project, index }: { project: Project; index: number }) {
@@ -188,7 +226,7 @@ interface Project {
               src={project.image}
               alt={project.imageAlt ?? project.title}
               fill
-              sizes="(max-width: 900px) 100vw, 480px"
+              sizes={project.featured ? '(max-width: 900px) 100vw, 560px' : '(max-width: 700px) 100vw, 180px'}
               style={{ objectFit: project.imageFit ?? 'cover', objectPosition: project.imagePosition ?? 'center' }}
             />
           ) : project.ascii ? (
@@ -214,7 +252,7 @@ interface Project {
         <div className="project-content">
           <h3 className="project-title">{project.title}</h3>
           <p className="project-subtitle">{project.subtitle}</p>
-          <p className="project-description">{project.description}</p>
+          <p className="project-description">{project.summary ?? project.description}</p>
           <div className="project-highlights">
             {project.award && (
               <span className="project-award">{project.award}</span>
@@ -228,6 +266,7 @@ interface Project {
               </div>
             ))}
           </div>
+          {!project.featured && (
           <div className="project-tech">
             {project.tech.map((tech, techIndex) => (
               <span key={techIndex}>
@@ -236,20 +275,24 @@ interface Project {
               </span>
             ))}
           </div>
+          )}
         </div>
         <div className="project-links">
-          <a
-            href={project.githubUrl}
-            className="project-link-btn project-link-github"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {/* GitHub mark */}
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-            </svg>
-            GitHub
-          </a>
+          {project.caseStudyUrl && (
+            <a
+              href={project.caseStudyUrl}
+              className="project-link-btn project-link-case"
+            >
+              {/* Document icon */}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="8" y1="13" x2="16" y2="13" />
+                <line x1="8" y1="17" x2="13" y2="17" />
+              </svg>
+              Case Study
+            </a>
+          )}
           {project.demoUrl && (
             <a
               href={project.demoUrl}
@@ -266,21 +309,18 @@ interface Project {
               Live Demo
             </a>
           )}
-          {project.caseStudyUrl && (
-            <a
-              href={project.caseStudyUrl}
-              className="project-link-btn project-link-case"
-            >
-              {/* Document icon */}
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                <polyline points="14 2 14 8 20 8" />
-                <line x1="8" y1="13" x2="16" y2="13" />
-                <line x1="8" y1="17" x2="13" y2="17" />
-              </svg>
-              Case Study
-            </a>
-          )}
+          <a
+            href={project.githubUrl}
+            className="project-link-btn project-link-github"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {/* GitHub mark */}
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+            GitHub
+          </a>
           {project.devpostUrl && (
             <a
               href={project.devpostUrl}
@@ -303,7 +343,7 @@ interface Project {
   export default function Projects() {
     return (
       <section id="projects">
-        <h2 className="section-title">Projects</h2>
+        <h2 className="section-title"><span className="section-num">03</span>Projects</h2>
         <h3 className="projects-subhead">Featured</h3>
         <div className="projects-grid projects-featured">
           {featured.map((project, index) => (
@@ -311,7 +351,7 @@ interface Project {
           ))}
         </div>
         <h3 className="projects-subhead">More projects</h3>
-        <div className="projects-grid">
+        <div className="projects-grid projects-more">
           {others.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
